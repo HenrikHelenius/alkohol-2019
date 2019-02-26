@@ -1,0 +1,10 @@
+.idea
+.gitignore
+src
+build
+coverage
+data
+spec
+Gruntfile.coffee
+tools/build.sh
+tools/coffee-coverage-loader.js

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/x-icon" href="./favicon.ico">
+		<link rel="apple-touch-icon" href="./apple-logo.png">
+		<!-- Modernizr -->
+		<script src="js/modernizr.custom.js"></script>
+		<!-- Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="css/alko-font.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<!-- COMMON TAGS -->
+		<meta charset="utf-8">
+		<title>Alkoon datan perusteella | Alko.co.nf</title>
+		<!-- Search Engine -->
+		<meta name="description" content="Rationalisoi Alko-ostoksesi—Autamme sinua tekemään oikeat ostopäätökset datan perusteella.">
+		<meta name="image" content="http://alko.co.nf/images/meta.jpg">
+		<!-- Schema.org for Google -->
+		<meta itemprop="name" content="Alkoon datan perusteella | Alko.co.nf">
+		<meta itemprop="description" content="Rationalisoi Alko-ostoksesi—Autamme sinua tekemään oikeat ostopäätökset datan perusteella.">
+		<meta itemprop="image" content="http://alko.co.nf/images/meta.jpg">
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Alkoon datan perusteella | Alko.co.nf">
+		<meta name="twitter:description" content="Rationalisoi Alko-ostoksesi—Autamme sinua tekemään oikeat ostopäätökset datan perusteella.">
+		<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+		<meta name="og:title" content="Alkoon datan perusteella | Alko.co.nf">
+		<meta name="og:description" content="Rationalisoi Alko-ostoksesi—Autamme sinua tekemään oikeat ostopäätökset datan perusteella.">
+		<meta name="og:type" content="website">
+	</head>
+	<body>
+		<!-- Compare basket -->
+		<div class="compare-basket">
+			<button class="action action--button action--compare"><i class="alko-icon alko-icon-compare"></i><span class="action__text">Vertaile</span></button>
+		</div>
+		<header>
+			<h1>Rationalisoi Alko-ostoksesi</h1>
+			<p>
+				Autamme sinua tekemään oikeat ostopäätökset datan perusteella.
+			</p>
+
+			<p>
+				Kaikki alkon tuotteet ovat järjestelty parhaimmasta huonoimpaan <b>hinta&#8209;alkoholisuhteen</b> mukaan.
+			</p>
+
+			<div class="filters">
+				<label for="type">Suodata kategorian mukaan</label>
+				<select name="type" id="type" onchange="setFilter(this)"></select>
+				<label for="type">Suodata pakkaustyypin mukaan</label>
+				<div class="switches">
+					<input type="radio" id="switch-1" name="switch-4" value="pullo"/>
+					<label for="switch-1">Lasi</label>
+					<input type="radio" id="switch-2" name="switch-4" value="muovipullo|viinipussi|siideripussi" />
+					<label for="switch-2">Muovi</label>
+					<input type="radio" id="switch-3" name="switch-4" value="tölkki" />
+					<label for="switch-3">Tölkki</label>
+					<input type="radio" id="switch-4" name="switch-4" value="kartonkitölkki|hanapakkaus|tynnyri|muu|viinipussi|siideripussi" />
+					<label for="switch-4">Muu</label>
+				</div>
+			</div>
+		</header>
+		<!-- Main view -->
+		<div class="view">
+			<!-- Product grid -->
+			<section class="grid product-grid">
+				<!-- Products -->
+				<p class="loading-text">Ladataan...</p>
+			</section>
+
+			<div class="load-more-container"></div>
+
+			<p class="disclamer">
+				Muista nauttia <a href="https://www.kohtuullisesti.fi/" target="_blank">kohtuullisesti</a>.
+				<br>
+				<br>
+				Sivu ei (toistaiseksi) ole yhteistyössä Alkon kanssa.
+				Emme vastaa sivujen tietojen oikeellisuudesta taikka naulakkoon jätetyistä vaatteista.
+				<br>
+				<br>
+				<br>
+				<a href="https://codeberry.fi" target="_blank" class="animation-pulse">🇫🇮</a>
+			</p>
+		</div><!-- /view -->
+		<!-- product compare wrapper -->
+		<section class="compare">
+			<button class="action action--close"><i class="alko-icon alko-icon-check"></i><span class="action__text action__text--invisible">Sulje vertailu</span></button>
+		</section>
+		<script src="js/classie.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/index.js"></script>
+
+		<!-- Data and initialisation -->
+		<script src="./data.js"></script>
+		<script>
+			document.querySelector('head').innerHTML += `<title>Alkoon datan perusteella - ${ window.location.host }</title>`;
+			document.addEventListener("DOMContentLoaded", () => initialise())
+		</script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133736474-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-133736474-1');
+		</script>
+	</body>
+</html>

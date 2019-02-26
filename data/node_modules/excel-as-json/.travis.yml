@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - '4.0.0'
+before_install:
+  - 'npm install -g coffeescript'
+before_script:
+  - 'npm run-script dist'
+after_success:
+  - 'npm run-script codecov'
+  - 'npm run-script coveralls'
