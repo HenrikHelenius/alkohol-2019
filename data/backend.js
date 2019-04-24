@@ -177,35 +177,3 @@ const jsonProcess = (name = xlsName) => {
 };
 
 process();
-
-/////////////////////////
-////// Depreciated //////
-/////////////////////////
-
-/*
-function google(product) {
-  function getJSONP(url, success) {
-    var ud = '_' + +new Date,
-      script = document.createElement('script'),
-      head = document.getElementsByTagName('head')[0] ||
-      document.documentElement;
-
-    window[ud] = function(data) {
-      head.removeChild(script);
-      success && success(data);
-    };
-    script.src = url.replace('callback=?', 'callback=' + ud);
-    head.appendChild(script);
-  }
-
-  getJSONP('https://www.googleapis.com/customsearch/v1?key=AIzaSyCXEzHsFuu8UX7l-qDBNGpEjhFX6Cv4rlE&cx=002030677678250887662:wcrnljldml0&q=' + product + '&callback=?', function(data) {
-    const siteUrl = data.items[0].formattedUrl
-    const imgUrl = data.items[0].pagemap.cse_image[0].src
-    const imgUrlThumb = data.items[0].pagemap.cse_thumbnail[0].src
-    sources = {
-      site: siteUrl,
-      img: imgUrl,
-      thumb: imgUrlThumb
-    }
-  });
-}*/
