@@ -563,6 +563,11 @@ button.load-more:focus {
 	text-shadow: 0 0 10px rgba(226, 226, 226, 0.1), 10px 10px 50px rgba(184, 184, 184, 0.6);
 }
 
+.rank[data-length="5"] {
+	font-size: 3em;
+	text-shadow: 0 0 10px rgba(226, 226, 226, 0.1), 10px 10px 50px rgba(184, 184, 184, 0.6);
+}
+
 /*
 .rank:hover {
     -webkit-animation: peak 0.6s forwards;

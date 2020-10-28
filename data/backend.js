@@ -125,25 +125,27 @@ const convertToJson = (name) => {
 			G: 'Uutuus',
 			H: 'Hinnastojärjestyskoodi',
 			I: 'Tyyppi',
-			J: 'Erityisryhmä',
-			K: 'Oluttyyppi',
-			L: 'Valmistusmaa',
-			M: 'Alue',
-			N: 'Vuosikerta',
-			O: 'Etikettimerkintöjä',
-			P: 'Huomautus',
-			Q: 'Rypäleet',
-			R: 'Luonnehdinta',
-			S: 'Pakkaustyyppi',
-			T: 'Suljentatyppi',
-			U: 'Alkoholi-%',
-			V: 'Hapot g/l',
-			W: 'Sokeri g/l',
-			X: 'Kantavierrep-%',
-			Y: 'Väri EBC',
-			Z: 'Katkerot EBU',
-			AA: 'Energia kcal/100 ml',
-			AB: 'Valikoima'
+			J: 'Alatyyppi',
+			K: 'Erityisryhmä',
+			L: 'Oluttyyppi',
+			M: 'Valmistusmaa',
+			N: 'Alue',
+			O: 'Vuosikerta',
+			P: 'Etikettimerkintöjä',
+			Q: 'Huomautus',
+			R: 'Rypäleet',
+			S: 'Luonnehdinta',
+			T: 'Pakkaustyyppi',
+			U: 'Suljentatyppi',
+			V: 'Alkoholi-%',
+			W: 'Hapot g/l',
+			X: 'Sokeri g/l',
+			Y: 'Kantavierrep-%',
+			Z: 'Väri EBC',
+			AA: 'Katkerot EBU',
+			AB: 'Energia kcal/100 ml',
+			AC: 'Valikoima',
+			AD: 'EAN'
 		}
 	})
 };
@@ -163,7 +165,7 @@ const downloadXls = (name) => {
 };
 
 const date = new Date();
-const xlsName = `data_${date.toISOString()}.xls`;
+const xlsName = `data_${date.toISOString().replace('.', '_')}.xls`;
 
 const process = () => {
 	downloadXls(xlsName);

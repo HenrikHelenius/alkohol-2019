@@ -93,43 +93,7 @@ const makePromilles = () => {
 
 };
 
-const makeFilters = ( items ) => {
-	const countFiltering = (items) => {
-		Array.prototype.pushIfNotExistCounter = function(element) {
-			if (JSON.stringify(this).indexOf(element) == -1) this.push({
-				name: element,
-				frequency: 1
-			});
-			else this.find(object => object.name === element).frequency += 1
-		};
-
-		String.prototype.capitalize = function() {
-			return this.charAt(0).toUpperCase() + this.slice(1);
-		};
-
-		const f = {
-			types: [],
-			countries: [],
-			packages: [],
-			closingMethods: [],
-			availabilities: [],
-			specialities: [],
-			newInStocks: []
-		};
-
-		items.forEach( item => {
-			f.types.pushIfNotExistCounter(item.type.capitalize());
-			f.countries.pushIfNotExistCounter(item.country.capitalize());
-			f.packages.pushIfNotExistCounter(item.package.capitalize());
-			f.closingMethods.pushIfNotExistCounter(item.closingMethod.capitalize());
-			f.availabilities.pushIfNotExistCounter(item.availability.capitalize());
-			f.specialities.pushIfNotExistCounter(item.speciality.capitalize());
-			f.newInStocks.pushIfNotExistCounter(item.newInStock.capitalize());
-		});
-
-		return f
-	};
-
+const makeFilters = () => {
 	const makeOptionsMarkup = (options) => {
 		let markup = '';
 		options.forEach( option => markup += `<option value="${ option.name }">${ option.name }</option>` );
@@ -138,7 +102,11 @@ const makeFilters = ( items ) => {
 	const filtersEl = document.querySelector('.filters');
 	// Type filtering
 	const typeSelect = filtersEl.querySelector('#type');
-	const availableCategories = countFiltering(items).types.filter(o => o.frequency >= 1);
+	const availableCategories = data.verified.filtering.types
+											.filter(o => o.frequency >= 1)
+											.filter(
+												o => !['Not available', 'Alkoholittomat'].includes(o.name)
+											);
 	typeSelect.innerHTML = makeOptionsMarkup(
 		[
 			{
@@ -218,7 +186,8 @@ const updateList = () => makeList( filterList() );
 const initialise = () => {
 	if (!!data) {
 		listenSwitchFilterClicks();
-		makeFilters( filterList() );
+		filterList();
+		makeFilters();
 		updateList();
 	} else {
 		setTimeout(() => initialise(), 100)
